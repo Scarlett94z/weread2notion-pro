@@ -129,8 +129,7 @@ def insert_book_to_notion(books, index, bookId):
     if bookId in notion_books:
         result = notion_helper.update_page(
             page_id=notion_books.get(bookId).get("pageId"),
-            properties=properties,
-            icon=utils.get_icon(book.get("封面")),
+            properties=properties
         )
     else:
         result = notion_helper.create_page(
